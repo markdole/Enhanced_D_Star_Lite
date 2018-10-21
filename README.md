@@ -3,8 +3,8 @@ Enhancede D* Lite to avoid the Trap Obstacle and Verticle Obstacle
 Enhangced D* Lite
 ---
 基本D\*lite算法不能解决的几个障碍类型：  
- \. \. \.  
- \. \* \#  
+ \.  \.  \.  
+ \.  \*  \#  
  \# \# \#  
  当goal点在右下角时 每次`min_state`会保持在陷阱点  
  本算法解决的问题：即 判断并跳出陷阱  
@@ -15,7 +15,7 @@ Enhangced D* Lite
         for y in self.map.get_neighbers(state):
             if y.state in ['#', 'v']:
                 obs.append((y.x, y.y))
-        if len(obs)== 4:
+        if len(obs)== 3:
             sumx = sum([i[0] - state.x for i in obs])
             sumy = sum([i[1] - state.y for i in obs])
             if [sgn(end.x - state.x), sgn(end.y - state.y)] == [sumx/3, sumy]:
